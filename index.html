@@ -7,18 +7,20 @@
    <title>Boldo</title>
    <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js" integrity="sha512-fTTVSuY9tLP+l/6c6vWz7uAQqd1rq3Q/GyKBN2jOZvJSLC5RjggSdboIFL1ox09/Ezx/AKwcv/xnDeYN9+iDDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script src="./app.js" defer></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
    <header>
       <a href="#" class="headerLogo"><img src="./images/hero-logo.png" alt="Boldo"></a>
-      <nav>
+      <nav class="nav">
          <a href="#" class="navLink">Product</a>
          <a href="#" class="navLink">Services</a>
          <a href="#" class="navLink">About</a>
          <button class="navLink loginBtn" onclick="login()">Log In</button>
+         <div class="menuClose showWhenMobile" ></div>
       </nav>
+      <div class="menuToggle showWhenMobile" ></div>
    </header>
 
    <section id="hero">
@@ -26,7 +28,7 @@
          <h1>Save time by building  fast with Boldo Template </h1>
          <p>Funding handshake buyer business-to-business metrics iPad partnership. First mover advantage innovator success deployment non-disclosure.</p>
          <div class="ctaButtons">
-            <a href="#" class="heroBuy">Buy template</a>
+            <a href="#" class="heroBuy greenBtn">Buy template</a>
             <a href="#" class="heroExplore">Explore</a>
          </div>
       </div>
@@ -126,8 +128,8 @@
       <div class="testimonialsHead">
          <h3>An enterprise template to ramp up your company website</h3>
          <div class="navigationButtons">
-            <button class="previous" onclick="previousSlide()"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="next" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="previous" ><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next" ><i class="fa-solid fa-arrow-right"></i></button>
          </div>
       </div>
       <div class="testimonialsContainer swiper mySwiper">
@@ -206,5 +208,128 @@
          <!-- <div class="swiper-pagination"></div> -->
       </div>
    </section>
+   <section class="servicesLight FAQs">
+      <img src="./images/wide-services.png" alt="">
+      <div class="text">
+         <p>We connect our customers with the best, and help them keep up-and stay open.</p>
+         <div class="faqs">
+            <div class="dropdown">
+               <div class="clickable" onclick="openFaq(this.nextElementSibling)"><p>We connect our customers with the best? <i class="fa-solid fa-chevron-down"></i></p></div>
+               <div class="hiddenText">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolorum enim, possimus quisquam quia consectetur cupiditate voluptatem labore vero recusandae.</p>
+               </div>
+
+            </div>
+
+
+            <div class="dropdown">
+               <div class="clickable" onclick="openFaq(this.nextElementSibling)"><p>Android research & development rockstar?  <i class="fa-solid fa-chevron-down"></i></p></div>
+               <div class="hiddenText">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolorum enim, possimus quisquam quia consectetur cupiditate voluptatem labore vero recusandae.</p>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="blog" id="blog">
+      <div class="sectionHeader">
+         <p>Our Blog</p>
+         <h3>Value proposition accelerator product management venture</h3>
+      </div>
+
+      <div class="blogArticlesContainer">
+         <div class="article">
+            <div class="image"><img src="./images/blog/post1.png" alt=""></div>
+            <div class="description">
+               <div class="top">
+                  <p class="category">Category</p>
+                  <p class="publishDate">November 22,2022</p>
+               </div>
+               <div class="bottom">
+                  <p>Pitch termsheet backing validation focus release.</p>
+               </div>
+            </div>
+            <div class="author">
+               <img src="./images/blog/author1.png" alt="">
+               <p class="name">Chandler Bing</p>
+            </div>
+         </div>
+
+         <div class="article">
+            <div class="image"><img src="./images/blog/post2.png" alt=""></div>
+            <div class="description">
+               <div class="top">
+                  <p class="category">Category</p>
+                  <p class="publishDate">November 22,2022</p>
+               </div>
+               <div class="bottom">
+                  <p>Pitch termsheet backing validation focus release.</p>
+               </div>
+            </div>
+            <div class="author">
+               <img src="./images/blog/author2.png" alt="">
+               <p class="name">Chandler Bing</p>
+            </div>
+         </div>
+
+         <div class="article">
+            <div class="image"><img src="./images/blog/post3.png" alt=""></div>
+            <div class="description">
+               <div class="top">
+                  <p class="category">Category</p>
+                  <p class="publishDate">November 22,2022</p>
+               </div>
+               <div class="bottom">
+                  <p>Pitch termsheet backing validation focus release.</p>
+               </div>
+            </div>
+            <div class="author">
+               <img src="./images/blog/author3.png" alt="">
+               <p class="name">Chandler Bing</p>
+            </div>
+         </div>
+      </div>
+      <button class="loadMoreArticles">Load More</button>
+   </section>
+
+   <section class="contact">
+      <h2>An enterprise template to ramp up your company website</h2>
+      <form action="POST">
+         <input type="email" placeholder="Your email address">
+         <button type="submit"  class="greenBtn">Start Now</button>
+      </form>
+   </section>
+
+
+
+   <footer>
+      <div class="copyright">
+         <img src="./images/footer-logo.png" alt="">
+         <p>Social media validation business model canvas graphical user interface launch party creative facebook iPad twitter.</p>
+         <p>all rights reserved.</p>
+      </div>
+      <div class="footerLinksContainer">
+         <ul class="column">
+            <li class="row"><p>Landings</p></li>
+            <li class="row"><a href="">Home</a></li>
+            <li class="row"><a href="">Products</a></li>
+            <li class="row"><a href="">Services</a></li>
+         </ul>
+         <ul class="column">
+            <li class="row"><p>Company</p></li>
+            <li class="row"><a href="">Home</a></li>
+            <li class="row hiring"><a href="">Careers</a></li>
+            <li class="row"><a href="">Services</a></li>
+         </ul>
+         <ul class="column">
+            <li class="row"><p>Resources</p></li>
+            <li class="row"><a href="">Blog</a></li>
+            <li class="row"><a href="">Products</a></li>
+            <li class="row"><a href="">Services</a></li>
+         </ul>
+      </div>
+   </footer>
 </body>
 </html>
