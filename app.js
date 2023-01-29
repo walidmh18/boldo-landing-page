@@ -16,16 +16,20 @@ if (screen.width > 1200) {
    spaceBtwn = 20
    slidesPerView = 2
 }
-else if (screen.width > 650 && screen.width < 1000) {
-   spaceBtwn = 0
+else if (screen.width < 650 ) {
+   spaceBtwn = 15
    slidesPerView = 1
 }
 
 const menuToggle = document.querySelector('.menuToggle')
 const menuClose = document.querySelector('.menuClose')
 const nav = document.querySelector('.nav')
+
+const plustox1 = document.querySelector('.plusToX1')
+const plustox2 = document.querySelector('.plusToX2')
+
 lottie.loadAnimation({
-   container: menuToggle, // the dom element that will contain the animation
+   container: menuToggle, 
    renderer: 'svg',
    path: './menu/menu.json' ,
    name:'menuToggleAnim',
@@ -33,16 +37,44 @@ lottie.loadAnimation({
    loop:false,
  });
  lottie.loadAnimation({
-   container: menuClose, // the dom element that will contain the animation
+   container: menuClose, 
    renderer: 'svg',
    path: './menu/menu.json' ,
    name:'menuCloseAnim',
    autoplay:false,
    loop:false,
  });
+
+   lottie.loadAnimation({
+   container: plustox1, 
+   renderer: 'svg',
+   path: './Plus to X/plusToX.json' ,
+   name:'plustox1',
+   autoplay:false,
+   loop:false,
+ });
+
+ lottie.loadAnimation({
+   container: plustox2, 
+   renderer: 'svg',
+   path: './Plus to X/plusToX.json' ,
+   name:'plustox2',
+   autoplay:false,
+   loop:false,
+ });
+
+
+
+
+
+
 let animDir = 1
 
  menuToggle.onclick= () => {
+   MenuToggleAnim()
+ }
+
+function MenuToggleAnim() {
    lottie.setDirection(animDir , 'menuToggleAnim')
    lottie.play('menuToggleAnim')
 
@@ -57,10 +89,8 @@ let animDir = 1
       animDir = 1
    }
    navToggle()
- }
-
- 
- menuClose.onclick= () => {
+}
+function menuCloseAnim(){
    lottie.setDirection(animDir , 'menuCloseAnim')
    lottie.play('menuCloseAnim')
 
@@ -75,48 +105,68 @@ let animDir = 1
       animDir = 1
    }
    navToggle()
+}
+
+ menuClose.onclick= () => {
+   menuCloseAnim()
  }
 
-
  addEventListener('click', (e)=> {
-   const outsideClick = !nav.contains(e.target);
- });
+    const outsideClick = !nav.contains(e.target);
+      if(nav.classList.contains('active')){
+
+   //   console.log(nav.classList.contains('active'));
+     if (!outsideClick) {
+          menuCloseAnim()
+      }
+      }
+   });
+
 
  console.log(';');
 
 
 
  function navToggle() {
-   console.log('object');
    nav.classList.toggle('active')
+   
  }
-// let swiper = new Swiper(".mySwiper", {
-//    slidesPerView: slidesPerView,
-//    spaceBetween: spaceBtwn,
-//    pagination: {
-//       el: ".swiper-pagination",
-//       clickable: true,
-//    },
-//    loop: true,
-//    navigation: {
-//       nextEl: '.next',
-//       prevEl: '.previous',
-//     },
-//    });
+let swiper = new Swiper(".testimonialsSwiper", {
+   slidesPerView: slidesPerView,
+   spaceBetween: spaceBtwn,
+   pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+   },
+   loop: true,
+   navigation: {
+      nextEl: '.next',
+      prevEl: '.previous',
+    },
+   });
 
    
 
 
-function openFaq(el) {
-   let elHeight = el.querySelector('p').offsetHeight
+function openFaq(el , siblingEl) {
+   let elHeight = siblingEl.querySelector('p').offsetHeight
+   const index = Array.from(
+      el.parentElement.parentElement.children
+    ).indexOf(el.parentElement) + 1;
+
+    console.log(index);
    // el.classList.toggle('active')
 
-   if ( el.style.height == 0 || el.style.height == '0px' ) {
-      el.style.height = `${elHeight}px`
-      
+   if ( siblingEl.style.height == 0 || siblingEl.style.height == '0px' ) {
+      siblingEl.style.height = `${elHeight}px`
+      // arrow.style.rotate = '180deg'
+      lottie.setDirection(1 , `plustox${index}`)
+      lottie.play(`plustox${index}`)
    } else {
-      el.style.height = `0`
-      
+      siblingEl.style.height = `0`
+      // arrow.style.rotate = '0deg'
+      lottie.setDirection(-1 , `plustox${index}`)
+      lottie.play(`plustox${index}`)
    }
 }
 

@@ -9,6 +9,8 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js" integrity="sha512-fTTVSuY9tLP+l/6c6vWz7uAQqd1rq3Q/GyKBN2jOZvJSLC5RjggSdboIFL1ox09/Ezx/AKwcv/xnDeYN9+iDDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script src="./app.js" defer></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <style id="navAfter-BeforeStyling"></style>
 </head>
 <body>
    <header>
@@ -132,7 +134,7 @@
             <button class="next" ><i class="fa-solid fa-arrow-right"></i></button>
          </div>
       </div>
-      <div class="testimonialsContainer swiper mySwiper">
+      <div class="testimonialsContainer swiper testimonialsSwiper">
          <div class="slider swiper-wrapper">
             <div class="testimonial swiper-slide">
                <div class="quot">“Buyer buzz partner network disruptive non-disclosure agreement business”</div>
@@ -214,7 +216,7 @@
          <p>We connect our customers with the best, and help them keep up-and stay open.</p>
          <div class="faqs">
             <div class="dropdown">
-               <div class="clickable" onclick="openFaq(this.nextElementSibling)"><p>We connect our customers with the best? <i class="fa-solid fa-chevron-down"></i></p></div>
+               <div class="clickable" onclick="openFaq(this ,this.nextElementSibling)"><p>We connect our customers with the best? <button class="plusToX plusToX1"></button></p></div>
                <div class="hiddenText">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolorum enim, possimus quisquam quia consectetur cupiditate voluptatem labore vero recusandae.</p>
                </div>
@@ -223,7 +225,7 @@
 
 
             <div class="dropdown">
-               <div class="clickable" onclick="openFaq(this.nextElementSibling)"><p>Android research & development rockstar?  <i class="fa-solid fa-chevron-down"></i></p></div>
+               <div class="clickable" onclick="openFaq(this , this.nextElementSibling)"><p>Android research & development rockstar?  <button class="plusToX plusToX2"></button></p></div>
                <div class="hiddenText">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolorum enim, possimus quisquam quia consectetur cupiditate voluptatem labore vero recusandae.</p>
                </div>
