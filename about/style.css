@@ -1,0 +1,287 @@
+
+
+
+#hero{
+   background-color: unset;
+   grid-template-columns: repeat(1,1fr);
+   /* overflow: visible; */
+}
+  
+#hero::after{
+   display: none;
+}
+
+#hero::before{
+   content: '';
+   width: 100vw;
+   height: 70vh;
+   background-color: var(--dark-blue);
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+#hero .text{
+   /* width: fit-content; */
+   text-align: center;
+   margin: 10vh 20vw 0;
+}
+
+#hero .text h2{
+   font-weight: 400;
+   color: #f1f1f1;
+}
+
+#hero .text p{
+   color: #f1f1f1;
+}
+
+
+#hero .images{
+   display: grid;
+   grid-template-columns: calc(30% - 2rem) calc(40% - 2rem) calc(30% - 2rem);
+   gap: 3rem;
+   width: 70vw;
+   margin: 0 auto;
+}
+
+#hero .images :nth-child(2){
+   grid-row: span 2;
+}
+#hero .images img{
+   width: 100%;
+}
+
+#hero .images div{
+   display: grid;
+   place-items: center;
+}
+p.sectionName{
+   color: var(--grey);
+   font-size: 1.4rem;
+   margin-bottom: 2rem;
+}
+
+p.sectionText{
+   color: #777;
+   font-size: 1.750rem;
+}
+
+section:not(#hero ,.contact){
+   /* margin-top: 10rem; */
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: flex-start;
+   margin-bottom: 3rem;
+   padding: 10rem 0 7rem;
+}
+section:not(#hero) h3{
+   /* font-size: 4rem; */
+   font-weight: 400;
+   margin-bottom: 1.5rem;
+   /* width: 60%; */
+}
+
+.sectionTextContainer{
+   padding: 3rem 25vw;
+
+}
+
+section.blueBg{
+   background: var(--dark-blue);
+   color: var(--white);
+
+}
+section.blueBg p.sectionName{
+   color: var(--light-grey);
+}
+
+section.blueBg p.sectionText{
+   color: var(--light-grey);
+}
+
+
+.counters{
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   padding: 2rem 20vw;
+}
+
+.counters span , .counters p:not(.counterName){
+   color: var(--green);
+   font-size: 3rem;
+   display: inline;
+}
+
+.counters .counterName{
+   font-size: 2rem;
+}
+
+
+.teamMembers{
+   display: grid;
+   width: 100%;
+   grid-template-columns: repeat(3,1fr);
+   padding: 5rem 10vw;
+   gap: 5rem;
+}
+
+.teamMembers img{
+   width: 100%;
+   margin-bottom: 3rem;
+}
+
+.teamMembers h4{
+   font-size: 3rem;
+   font-weight: 400;
+}
+
+.teamMembers p{
+   color: var(--grey);
+   font-size: 1.5rem;
+   font-weight: 500;
+}
+
+
+
+
+/* values styling */
+
+.valuesList{
+   display: flex;
+   flex-direction: column;
+   gap: 4rem;
+   padding: 10vh 0;
+}
+
+.valuesList .value{
+   display: flex;
+   align-items: center;
+   gap: 4rem;
+}
+
+.valuesList .valueText h4{
+   font-weight: 400;
+   font-size: 2rem;
+}
+
+.valuesList .valueText p{
+   font-size: 1.5rem;
+   padding: 2rem 0;
+}
+
+
+
+
+@media (max-width: 1440px) {
+   #hero .text{
+      margin: 10vh 10vw 0;
+   }
+
+   .sectionTextContainer {
+      padding: 3rem 15vw;
+  }
+   
+}
+
+
+@media (max-width: 1100px) {
+   #hero .images{
+      gap: 1rem;
+      grid-template-columns: calc(30% - 0.66rem) calc(40% - 0.66rem) calc(30% - 00.66rem);
+      width: 90vw;
+   }
+
+   .teamMembers{
+      grid-template-columns: repeat(2,1fr);
+   }
+
+   .counters{
+      padding: 2rem 10vw;
+   }
+   p.sectionText {
+      font-size: 1.6rem;
+   }
+
+   section:not(#hero ,.contact) {
+      padding: 8rem 0 5rem;
+   }
+}
+
+
+@media (max-width: 768px) {
+   
+   #hero .text{
+      margin: 10vh 6vw 0;
+   }
+
+   .sectionTextContainer {
+      padding: 3rem 10vw;
+  }
+   
+
+   .counters{
+      padding: 2rem 7vw;
+   }
+   p.sectionText {
+      font-size: 1.5rem;
+   }
+
+   .valuesList .value {
+      gap: 2rem;
+   }
+   section:not(#hero ,.contact) {
+      padding: 6rem 0 4rem;
+   }
+}
+
+
+@media (max-width: 500px) {
+   
+   #hero .text{
+      margin: 10vh 6vw 0;
+   }
+
+   .sectionTextContainer {
+      padding: 3rem 3vw;
+  }
+   
+
+   .counters{
+      padding: 2rem 7vw;
+   }
+
+   .teamMembers{
+      grid-template-columns: repeat(1,1fr);
+   }
+   #hero{
+      padding: 4rem 0;
+   }
+   p.sectionText {
+      font-size: 1.25rem;
+   }
+
+   .counters{
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      text-align: center;
+   }
+
+   .valuesList .value {
+      gap: 2rem;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+   }
+
+   .valuesList .valueText p {
+      padding: 0.5rem;
+   }
+
+   section:not(#hero ,.contact) {
+      padding: 3rem 0 1.8rem;
+   }
+}

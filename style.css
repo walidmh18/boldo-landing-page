@@ -188,7 +188,7 @@ header nav{
 .automaticSlider {
    width: 100%;
    position: relative;
-   overflow: hidden;
+   overflow-x: hidden;
    grid-column: span 2;
    min-height: 70px;
    padding: 2rem 0;
@@ -197,13 +197,15 @@ header nav{
    display: flex;
    justify-content: space-between;
    position: absolute;
-   
-   gap: 2rem;
+   top: 0;
+   width: calc(240px * 15);
+   /* gap: 2rem; */
    animation: autoSlider 15s infinite linear;
 }
 
 .automaticSlider .slider img{
-   height: 50px;
+   width: 200px;
+   padding: 0 20px;
 }
 
 .automaticSlider::after{
@@ -211,14 +213,15 @@ header nav{
    height: 100%;
    content: '';
    position: absolute;
+   top: 0;
    background: linear-gradient(to right ,hsl(209, 73%, 15%)0% ,
                                transparent 15% , 
                                transparent 85% ,
                                hsl(209, 73%, 15%) 100%);
 }
 @keyframes autoSlider {
-   from{left: 0;}
-   to{left: -100%;}
+   from{transform: translateX(0);}
+   to{transform: translateX(calc(-240px * 7.5));}
 }
 
 
@@ -727,7 +730,7 @@ footer li a{
 
 
 @media (max-width:1500px) {
-   #hero .text h1 ,.sectionHeader h3 ,.service .text .title ,.testimonialsHead h3 ,.FAQs .text>p ,.contact h2  {
+   #hero .text h1 ,.sectionHeader h3 ,.service .text .title ,.testimonialsHead h3 ,.FAQs .text>p ,.contact h2  ,h3{
       font-size: 3.5rem;
    }
    .sectionHeader{
@@ -757,7 +760,7 @@ footer li a{
 }
 
 @media (max-width:1300px) {
-   #hero .text h1,.sectionHeader h3 ,.service .text .title ,.testimonialsHead h3 ,.FAQs .text>p ,.contact h2 {
+   #hero .text h1,.sectionHeader h3 ,.service .text .title ,.testimonialsHead h3 ,.FAQs .text>p ,.contact h2, h3 {
       font-size: 3rem;
    }
    .sectionHeader{
@@ -796,7 +799,7 @@ footer li a{
    header{
       padding: 1rem 5rem;
    }
-   #hero .text h1, .sectionHeader h3, .service .text .title ,.testimonialsHead h3 ,.FAQs .text>p ,.contact h2 {
+   #hero .text h1, .sectionHeader h3, .service .text .title ,.testimonialsHead h3 ,.FAQs .text>p ,.contact h2  , h3{
       font-size: 2.5rem;
   }
   .guarantees {
